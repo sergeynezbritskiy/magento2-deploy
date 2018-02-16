@@ -1,0 +1,16 @@
+#!/bin/bash
+
+db_host='0.0.0.0'
+db_name='teaandcoffee_m2'
+db_user='admin'
+db_pass='admin123'
+mage_base_url='http://teaandcoffee.magento2.local'
+mage_admin_user="admin"
+mage_admin_firstname="admin_first_name"
+mage_admin_lastname="mage_admin_lastname"
+mage_admin_email="admin@gmail.com"
+mage_admin_pass="admin123"
+mage_admin_path="admin"
+deploy_mode="developer"
+magento_com_username="33115e9b18c20b11c8b213564760bf81"
+magento_com_password="c7bbefe78899282ca7c06c6636a33078"

@@ -3,7 +3,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="sergeynezbritskiy_deploy_configure_command" xsi:type="object">SergeyNezbritskiy\Deploy\Console\Command\ConfigureCommand</item>
+                <item name="enable_developer_mode" xsi:type="object">Magecom\Base\Console\Command\EnableDeveloperModeCommand</item>
             </argument>
         </arguments>
     </type>
