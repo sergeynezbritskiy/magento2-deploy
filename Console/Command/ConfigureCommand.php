@@ -84,7 +84,7 @@ class ConfigureCommand extends Command
     private function getInputList(): array
     {
         return [
-            new InputArgument('mode', InputArgument::OPTIONAL, 'Deploy mode: either developer or production', 'developer'),
+            new InputArgument('mode', InputArgument::OPTIONAL, 'Deploy mode: either developer or production', DeployModeConfigFactory::DEPLOY_MODE_DEVELOPER),
         ];
     }
 

@@ -10,8 +10,29 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.0"
+    },
+    "support": {
+        "issues": "https://github.com/sergeynezbritskiy/magento2-deploy/issues"
+    },
     "version": "1.0.0",
+    "scripts": {
+        "post-package-update": [
+            "cp bin/clean.sh ../../../bin/",
+            "cp bin/install.sh ../../../bin/",
+            "cp bin/update.sh ../../../bin/",
+            "cp bin/config.sh.sample ../../../bin/",
+            "echo '/bin/config.sh' > ../../../.gitignore"
+        ],
+        "pre-package-uninstall": [
+          "rm ../../../bin/clean.sh",
+          "rm ../../../bin/install.sh",
+          "rm ../../../bin/update.sh",
+          "rm ../../../bin/config.sh",
+          "rm ../../../bin/config.sh.sample"
+        ]
+    },
     "autoload": {
         "files": [
             "registration.php"
@@ -20,4 +41,5 @@
             "SergeyNezbritskiy\\Deploy\\": ""
         }
     }
+
 }
