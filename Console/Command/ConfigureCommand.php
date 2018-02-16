@@ -62,9 +62,18 @@ class ConfigureCommand extends Command
     {
         $deployMode = $input->getArgument('mode');
         $config = $this->configFactory->create($deployMode);
+
+        $output->writeln('<info>Start configuring</info>');
+
+        $output->writeln('Use form key: ' . ($config->useFormKey() ? 'true' : 'false'));
         $this->resourceConfig->saveConfig('admin/security/use_form_key', $config->useFormKey(), ScopeConfigInterface::SCOPE_TYPE_DEFAULT, Store::DEFAULT_STORE_ID);
+
+        $output->writeln('Session lifetime: ' . $config->getSessionLifetime());
         $this->resourceConfig->saveConfig('admin/security/session_lifetime', $config->getSessionLifetime(), ScopeConfigInterface::SCOPE_TYPE_DEFAULT, Store::DEFAULT_STORE_ID);
+
+        $output->writeln('Share admin account: ' . ($config->shareAdminAccount() ? 'true' : 'false'));
         $this->resourceConfig->saveConfig('admin/security/admin_account_sharing', $config->shareAdminAccount(), ScopeConfigInterface::SCOPE_TYPE_DEFAULT, Store::DEFAULT_STORE_ID);
+
         $output->writeln('<info>Deploy mode configured. Please rerun `php bin/magento cache:clean`</info>');
         return 0;
     }
