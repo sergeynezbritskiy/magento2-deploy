@@ -1,0 +1,29 @@
+<?php
+
+$rootDirectory = dirname(dirname(dirname(__DIR__)));
+
+$dstPath = $rootDirectory . '/bin/';
+$srcPath = __DIR__ . '/bin/';
+
+$gitignoreFile = $rootDirectory . '/.gitignore';
+
+$sourceFiles = [
+    'clean.sh',
+    'install.sh',
+    'update.sh',
+    'config.sh.sample',
+];
+
+if (is_dir($dstPath)) {
+    foreach ($sourceFiles as $sourceFile) {
+        copy($srcPath . $sourceFile, $dstPath . $sourceFile);
+    }
+} else {
+    echo 'Unable to find magento `bin` directory. Please copy files from ' . $srcPath . ' to ' . $dstPath . ' manually.' . "\n";
+}
+if (is_file($gitignoreFile)) {
+    file_put_contents($gitignoreFile, "\n" . '/bin/config.sh' . "\n", FILE_APPEND);
+} else {
+    echo 'Unable to find .gitignore file. Please add `/bin/config.sh` to your root .gitignore file';
+}
+?>
