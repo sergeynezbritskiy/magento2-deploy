@@ -18,7 +18,8 @@
     },
     "version": "1.0.0",
     "scripts": {
-        "post-package-install": "php vendor/sergeynezbritskiy/magento2-deploy/init"
+        "post-package-install": ["php vendor/sergeynezbritskiy/magento2-deploy/init", "php init"],
+        "post-package-update": ["php vendor/sergeynezbritskiy/magento2-deploy/init", "php init"]
     },
     "autoload": {
         "files": [
