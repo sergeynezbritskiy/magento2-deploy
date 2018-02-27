@@ -14,6 +14,8 @@ $sourceFiles = [
     'config.sh.sample',
 ];
 
+echo "Start configuring magento2-deploy/sergeynezbritskiy module\n";
+
 if (is_dir($dstPath)) {
     foreach ($sourceFiles as $sourceFile) {
         copy($srcPath . $sourceFile, $dstPath . $sourceFile);
@@ -26,4 +28,6 @@ if (is_file($gitignoreFile)) {
 } else {
     echo 'Unable to find .gitignore file. Please add `/bin/config.sh` to your root .gitignore file';
 }
+echo "Configuring magento2-deploy/sergeynezbritskiy module finished\n";
+
 ?>
