@@ -47,7 +47,7 @@ class ConfigureCommand extends Command
     protected function configure()
     {
         $this->setName('deploy:mode:configure');
-        $this->setDescription('Set up configuration suitable for chosen deploy mode');
+        $this->setDescription('[SergeyNezbritskiy_Deploy module] Set up configuration suitable for chosen deploy mode');
         $this->setDefinition($this->getInputList());
         parent::configure();
     }
