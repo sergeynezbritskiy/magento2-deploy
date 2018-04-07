@@ -126,7 +126,7 @@ php bin/magento setup:di:compile
 echo -e '\E[47;31m'"\033[1mconfigure developer mode suitable settings\033[0m"
 if [ "$deploy_mode" == "developer" ]
   then
-    php bin/magento magecom:developer-mode:configure
+    php bin/magento deploy:mode:configure developer
 fi
 #echo -e '\E[47;31m'"\033[1mMAGENTO setup:static-content:deploy\033[0m"
 #php bin/magento setup:static-content:deploy -f
